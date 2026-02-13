@@ -1,252 +1,124 @@
+
 # 🚀 Projeto Laravel + Vue + Bootstrap + NativePHP (Desktop + Mobile)
 
-Este projeto é um **template base completo** para desenvolvimento multiplataforma usando:
+Template base profissional para desenvolvimento multiplataforma real usando:
 
 - Laravel (Backend)
 - Vue 3 (Frontend)
 - Bootstrap 5 (UI)
 - Vite (Build)
 - NativePHP Desktop
-- NativePHP Mobile
+- NativePHP Mobile (Android/iOS)
 
-Com essa estrutura você consegue gerar:
+Com essa stack você consegue gerar:
 
-✅ Sistema Web  
-✅ Aplicativo Desktop (Windows/Mac/Linux)  
-✅ Aplicativo Mobile (Android/iOS)
+✔ Sistema Web
+✔ Aplicativo Desktop
+✔ Aplicativo Android
+✔ Aplicativo iOS
 
-Tudo com **um único código-fonte**.
+Tudo com um único código-fonte.
 
 ---
 
 # 📦 Requisitos
-
-Antes de instalar, tenha:
 
 - PHP 8.2+
 - Composer
 - Node 18+
 - NPM
 - Git
-- SQLite ou PostgreSQL/MySQL
-- **7-Zip instalado (obrigatório para builds desktop)**
+- Banco de dados
+- 7-Zip instalado
 
-Download: https://www.7-zip.org/
-
-Opcional (para mobile build real):
+Android:
 - Android Studio
 - SDK Android
+- JDK 17
+- JAVA_HOME configurado
 
 ---
 
-# ⚙️ Instalação Laravel
+# ⚙️ Instalação
 
-```bash
 composer create-project laravel/laravel app
 cd app
-php artisan serve
-```
 
----
-
-# 🎨 Instalar Vue 3
-
-```bash
-npm install vue@3
-```
-
-resources/js/app.js
-
-```js
-import { createApp } from 'vue'
-import App from './App.vue'
-
-createApp(App).mount('#app')
-```
-
-resources/js/App.vue
-
-```vue
-<template>
-  <div class="container py-5">
-    <h1 class="text-primary">Laravel + Vue funcionando 🚀</h1>
-  </div>
-</template>
-```
-
-resources/views/welcome.blade.php
-
-```html
-<div id="app"></div>
-@vite('resources/js/app.js')
-```
-
-Rodar:
-
-```bash
+npm install
 npm run dev
-```
 
 ---
 
-# 🎨 Bootstrap 5
+# 🖥 Desktop
 
-```bash
-npm install bootstrap
-```
-
-app.js
-
-```js
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap'
-```
-
----
-
-# 🖥 NativePHP Desktop
-
-```bash
 composer require nativephp/electron
 php artisan native:install
 php artisan native:serve
-```
 
 Build:
-
-```bash
 php artisan native:build
-```
 
 ---
 
-# 📱 NativePHP Mobile
+# 📱 Mobile
 
-```bash
 composer require nativephp/mobile -W
 php artisan native:install
-```
 
-Modo rápido:
-
-```bash
-php artisan native:jump
-```
-
-Rodar dispositivo:
-
-```bash
+Rodar:
 php artisan native:run
-```
+
+Build APK:
+php artisan native:build android
+
+Release:
+php artisan native:build android --release
 
 ---
 
-# 📁 Estrutura
+# ⚠️ Erros comuns
 
-```
-app/
-bootstrap/
-config/
-database/
-native/
-public/
-resources/
-routes/
-vite.config.js
-composer.json
-package.json
-```
+JAVA não encontrado:
+Instalar JDK 17 e configurar JAVA_HOME.
 
----
+javac não reconhecido:
+Adicionar %JAVA_HOME%\bin ao PATH.
 
-# 🔌 Recursos Nativos
+Gradle sem JDK:
+Criar arquivo:
 
-- Notificações
-- Câmera
-- Arquivos locais
-- Microfone
-- Biometria
-- GPS
-- Clipboard
+nativephp/android/gradle.properties
 
-Exemplo:
+Conteúdo:
 
-```php
-use Native\Laravel\Facades\Notification;
+org.gradle.java.home=C:\\Program Files\\Java\\jdk-17
 
-Notification::title('Sucesso')
-    ->message('Operação concluída')
-    ->show();
-```
+Emulador não inicia:
+Criar dispositivo no Android Studio.
 
----
-
-# 🧪 Scripts
-
-Dev web
-```bash
-php artisan serve
-npm run dev
-```
-
-Desktop
-```bash
-php artisan native:serve
-```
-
-Mobile
-```bash
-php artisan native:run
-```
-
----
-
-# 🏗 Build Produção
-
-```bash
+Tela branca:
 npm run build
-php artisan native:build
-```
 
----
-
-# ❗ Problemas comuns
-
-Dependência composer:
-
-```bash
+Dependência travada:
 composer require nativephp/mobile -W
-```
-
-Tela branca desktop:
-
-```bash
-npm run build
-```
 
 ---
 
-# 📊 Arquitetura
+# 🧠 Arquitetura
 
-```
-Laravel → Backend/API
-Vue → Frontend
+Laravel → Backend  
+Vue → Frontend  
 NativePHP → Container multiplataforma
-```
 
 ---
 
 # 🏆 Resultado
 
-| Plataforma | Suporte |
-|--------|--------|
-Web | ✅ |
-Desktop | ✅ |
-Android | ✅ |
-iOS | ✅ |
+Web ✔  
+Desktop ✔  
+Android ✔  
+iOS ✔
 
 ---
 
-# ⭐ Licença
-
-MIT
+Licença MIT
