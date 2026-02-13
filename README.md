@@ -1,59 +1,252 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Projeto Laravel + Vue + Bootstrap + NativePHP (Desktop + Mobile)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este projeto é um **template base completo** para desenvolvimento multiplataforma usando:
 
-## About Laravel
+- Laravel (Backend)
+- Vue 3 (Frontend)
+- Bootstrap 5 (UI)
+- Vite (Build)
+- NativePHP Desktop
+- NativePHP Mobile
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Com essa estrutura você consegue gerar:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+✅ Sistema Web  
+✅ Aplicativo Desktop (Windows/Mac/Linux)  
+✅ Aplicativo Mobile (Android/iOS)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Tudo com **um único código-fonte**.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+# 📦 Requisitos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Antes de instalar, tenha:
 
-## Laravel Sponsors
+- PHP 8.2+
+- Composer
+- Node 18+
+- NPM
+- Git
+- SQLite ou PostgreSQL/MySQL
+- **7-Zip instalado (obrigatório para builds desktop)**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Download: https://www.7-zip.org/
 
-### Premium Partners
+Opcional (para mobile build real):
+- Android Studio
+- SDK Android
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+# ⚙️ Instalação Laravel
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer create-project laravel/laravel app
+cd app
+php artisan serve
+```
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 🎨 Instalar Vue 3
 
-## Security Vulnerabilities
+```bash
+npm install vue@3
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+resources/js/app.js
 
-## License
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+createApp(App).mount('#app')
+```
+
+resources/js/App.vue
+
+```vue
+<template>
+  <div class="container py-5">
+    <h1 class="text-primary">Laravel + Vue funcionando 🚀</h1>
+  </div>
+</template>
+```
+
+resources/views/welcome.blade.php
+
+```html
+<div id="app"></div>
+@vite('resources/js/app.js')
+```
+
+Rodar:
+
+```bash
+npm run dev
+```
+
+---
+
+# 🎨 Bootstrap 5
+
+```bash
+npm install bootstrap
+```
+
+app.js
+
+```js
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
+```
+
+---
+
+# 🖥 NativePHP Desktop
+
+```bash
+composer require nativephp/electron
+php artisan native:install
+php artisan native:serve
+```
+
+Build:
+
+```bash
+php artisan native:build
+```
+
+---
+
+# 📱 NativePHP Mobile
+
+```bash
+composer require nativephp/mobile -W
+php artisan native:install
+```
+
+Modo rápido:
+
+```bash
+php artisan native:jump
+```
+
+Rodar dispositivo:
+
+```bash
+php artisan native:run
+```
+
+---
+
+# 📁 Estrutura
+
+```
+app/
+bootstrap/
+config/
+database/
+native/
+public/
+resources/
+routes/
+vite.config.js
+composer.json
+package.json
+```
+
+---
+
+# 🔌 Recursos Nativos
+
+- Notificações
+- Câmera
+- Arquivos locais
+- Microfone
+- Biometria
+- GPS
+- Clipboard
+
+Exemplo:
+
+```php
+use Native\Laravel\Facades\Notification;
+
+Notification::title('Sucesso')
+    ->message('Operação concluída')
+    ->show();
+```
+
+---
+
+# 🧪 Scripts
+
+Dev web
+```bash
+php artisan serve
+npm run dev
+```
+
+Desktop
+```bash
+php artisan native:serve
+```
+
+Mobile
+```bash
+php artisan native:run
+```
+
+---
+
+# 🏗 Build Produção
+
+```bash
+npm run build
+php artisan native:build
+```
+
+---
+
+# ❗ Problemas comuns
+
+Dependência composer:
+
+```bash
+composer require nativephp/mobile -W
+```
+
+Tela branca desktop:
+
+```bash
+npm run build
+```
+
+---
+
+# 📊 Arquitetura
+
+```
+Laravel → Backend/API
+Vue → Frontend
+NativePHP → Container multiplataforma
+```
+
+---
+
+# 🏆 Resultado
+
+| Plataforma | Suporte |
+|--------|--------|
+Web | ✅ |
+Desktop | ✅ |
+Android | ✅ |
+iOS | ✅ |
+
+---
+
+# ⭐ Licença
+
+MIT

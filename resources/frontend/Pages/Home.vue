@@ -1,11 +1,10 @@
-<script setup>
-
-</script>
-
 <template>
-  $END$
+    <div>
+        <h1 class="bg-warning text-dark p-3">Bem-vindo ao Native App</h1>
+        <ExampleCard />
+    </div>
 </template>
 
-<style scoped>
-
-</style>
+<script setup>
+import ExampleCard from "../Components/ExampleCard.vue";
+</script>

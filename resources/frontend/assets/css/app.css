@@ -1,0 +1,6 @@
+/* Bootstrap customizações ou importações adicionais */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+body {
+    font-family: "Segoe UI", sans-serif;
+}
